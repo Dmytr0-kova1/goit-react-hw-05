@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item:hover,
+.item:focus {
+  transform: scale(1.05);
+  box-shadow: 0px 0 10px 0 rgba(0, 0, 0, 0.8);
+}
+
+.title {
+  padding: 2px;
+  color: #094f2c;
+}
