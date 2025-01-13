@@ -1,0 +1,16 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 0px;
+}
+
+.item {
+  padding: 10px;
+  max-width: 100px;
+}
+
+.details {
+  font-size: 10px;
+  text-align: center;
+  padding: 5px;
+}

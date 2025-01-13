@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.css";
 import clsx from "clsx";
+import Container from "../Container/Container";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
@@ -9,14 +10,16 @@ const buildLinkClass = ({ isActive }) => {
 const Header = () => {
   return (
     <header className={s.header}>
-      <nav className={s.nav}>
-        <NavLink className={buildLinkClass} to="/">
-          Home
-        </NavLink>
-        <NavLink className={buildLinkClass} to="/movies">
-          Movies
-        </NavLink>
-      </nav>
+      <Container>
+        <nav className={s.nav}>
+          <NavLink className={buildLinkClass} to="/">
+            Home
+          </NavLink>
+          <NavLink className={buildLinkClass} to="/movies">
+            Movies
+          </NavLink>
+        </nav>
+      </Container>
     </header>
   );
 };

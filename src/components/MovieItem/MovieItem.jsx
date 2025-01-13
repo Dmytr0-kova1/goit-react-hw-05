@@ -1,9 +1,9 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import s from "./MovieItem.module.css";
 
 const MovieItem = ({ movie }) => {
   return (
-    <NavLink to="/movies">
+    <Link to={`/movies/${movie.id}`}>
       <li className={s.item}>
         <img
           src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`}
@@ -11,7 +11,7 @@ const MovieItem = ({ movie }) => {
         />
         <h3 className={s.title}> {movie.original_title}</h3>
       </li>
-    </NavLink>
+    </Link>
   );
 };
 

@@ -21,16 +21,16 @@ export const getSearchMovie = async (query) => {
 };
 
 export const getDetailsMovie = async (id) => {
-  const { data } = await axios.get(`/movie/movie_${id}`, options);
+  const { data } = await axios.get(`/movie/${id}`, options);
   return data;
 };
 
 export const getCreditsMovie = async (id) => {
-  const { data } = await axios.get(`/movie/movie_${id}/credits`, options);
+  const { data } = await axios.get(`/movie/${id}/credits`, options);
   return data;
 };
 
 export const getReviewsMovie = async (id) => {
-  const { data } = await axios.get(`/movie/movie_${id}/reviews`, options);
+  const { data } = await axios.get(`/movie/${id}/reviews`, options);
   return data;
 };
