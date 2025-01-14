@@ -4,13 +4,15 @@ import { useParams } from "react-router-dom";
 import s from "./MovieCast.module.css";
 
 const imgDefault =
-  "https://miro.medium.com/v2/resize:fit:720/format:webp/1*SJK2HbUdlFq5LRvPSRqjbw.png";
+  "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg";
 
 const MovieCast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
   useEffect(() => {
+    if (!movieId) return;
+
     const getCast = async () => {
       try {
         const { cast } = await getCreditsMovie(movieId);

@@ -55,8 +55,8 @@ const MovieCard = ({ movie }) => {
             Reviews
           </NavLink>
         </nav>
-        <Outlet />
       </div>
+      <Outlet />
     </>
   );
 };
