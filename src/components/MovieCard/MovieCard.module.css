@@ -70,14 +70,14 @@
   width: 100px;
   padding: 5px;
   color: #272626;
-  background-color: #a49f9f;
+  background-color: #d4cdcd;
   border: 1px solid #2c2b2b;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
 .linkBtm:hover {
-  background-color: #928d8d;
+  background-color: #c2bcbc;
 }
 
 .score {
