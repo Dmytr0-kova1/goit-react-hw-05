@@ -1,8 +1,13 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import s from "./MovieCard.module.css";
 import clsx from "clsx";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { useRef } from "react";
 
 const MovieCard = ({ movie }) => {
+  const location = useLocation();
+  const backLinkHref = useRef(location.state ?? "/");
+
   const {
     poster_path,
     title,
@@ -21,10 +26,16 @@ const MovieCard = ({ movie }) => {
 
   return (
     <>
+      <NavLink className={s.linkBtm} to={backLinkHref.current}>
+        <FaArrowAltCircleLeft size={18} />
+        Go back
+      </NavLink>
+
       <div className={s.container}>
         <div className={s.img}>
           <img
-            src={`https://image.tmdb.org/t/p/w200${poster_path}`}
+            className={s.image}
+            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             alt={title}
           />
         </div>
@@ -32,7 +43,13 @@ const MovieCard = ({ movie }) => {
           <h2>
             {original_title} ({dataYear})
           </h2>
-          <p>User Score: {Math.round(vote_average * 10)}%</p>
+          <p className={s.textScore}>
+            User Score:
+            <span className={s.score}>
+              {Math.round(vote_average * 10)}
+              <span className={s.percentages}>%</span>
+            </span>
+          </p>
           <h3>Overview</h3>
           <p>{overview}</p>
           <h3>Genres</h3>

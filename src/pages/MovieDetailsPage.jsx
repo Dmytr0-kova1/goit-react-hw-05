@@ -4,19 +4,24 @@ import { useParams } from "react-router-dom";
 import Container from "../components/Container/Container";
 import Section from "../components/Section/Section";
 import MovieCard from "../components/MovieCard/MovieCard";
+import Loader from "../components/Loader/Loader";
 
 const MovieDetailsPage = () => {
   const [movie, setMovie] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const { movieId } = useParams();
 
   useEffect(() => {
     const renderMovie = async () => {
       try {
-        const res = await getDetailsMovie(movieId);
+        setIsLoading(true);
 
+        const res = await getDetailsMovie(movieId);
         setMovie(res);
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -25,9 +30,7 @@ const MovieDetailsPage = () => {
 
   return (
     <Container>
-      <Section>
-        <MovieCard movie={movie} />
-      </Section>
+      <Section>{isLoading ? <Loader /> : <MovieCard movie={movie} />}</Section>
     </Container>
   );
 };
