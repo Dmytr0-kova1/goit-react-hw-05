@@ -1,13 +1,8 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import s from "./MovieCard.module.css";
 import clsx from "clsx";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
-import { useRef } from "react";
 
 const MovieCard = ({ movie }) => {
-  const location = useLocation();
-  const backLinkHref = useRef(location.state ?? "/");
-
   const {
     poster_path,
     title,
@@ -26,11 +21,6 @@ const MovieCard = ({ movie }) => {
 
   return (
     <>
-      <NavLink className={s.linkBtm} to={backLinkHref.current}>
-        <FaArrowAltCircleLeft size={18} />
-        Go back
-      </NavLink>
-
       <div className={s.container}>
         <div className={s.img}>
           <img

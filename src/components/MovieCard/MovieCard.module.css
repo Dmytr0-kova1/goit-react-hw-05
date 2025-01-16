@@ -62,24 +62,6 @@
   pointer-events: none;
 }
 
-.linkBtm {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  width: 100px;
-  padding: 5px;
-  color: #272626;
-  background-color: #d4cdcd;
-  border: 1px solid #2c2b2b;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
-
-.linkBtm:hover {
-  background-color: #c2bcbc;
-}
-
 .score {
   display: inline-block;
   text-align: center;
