@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import s from "./MovieItem.module.css";
 
 const imgDefault =
@@ -7,20 +6,18 @@ const imgDefault =
 const MovieItem = ({ movie }) => {
   return (
     <>
-      <Link to={`/movies/${movie.id}`}>
-        <li className={s.item}>
-          <img
-            className={s.img}
-            src={
-              movie.backdrop_path
-                ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
-                : imgDefault
-            }
-            alt={movie.title}
-          />
-          <h3 className={s.title}> {movie.original_title}</h3>
-        </li>
-      </Link>
+      <li className={s.item}>
+        <img
+          className={s.img}
+          src={
+            movie.backdrop_path
+              ? `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`
+              : imgDefault
+          }
+          alt={movie.title}
+        />
+        <h3 className={s.title}> {movie.original_title}</h3>
+      </li>
     </>
   );
 };
